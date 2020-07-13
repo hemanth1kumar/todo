@@ -1,0 +1,93 @@
+.todo {
+   box-sizing: border-box;
+   margin: 0 1em;
+   margin-bottom: 1em;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+   padding: 0.1em;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .title {
+      font-size: 1.25rem;
+      padding-left: 0.25em;
+      width: 65%;
+   }
+
+   .todo-options {
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+      // border: 2px solid khaki;
+      position: relative;
+
+      .opt {
+         font-size: 1.25rem;
+         padding: 0.8em 0.5em;
+         margin: 0.5em 1em;
+         cursor: pointer;
+      }
+
+      .pos-rel {
+         position: relative;
+
+         &:hover .my-tooltip {
+            visibility: visible;
+         }
+      }
+
+      .my-tooltip {
+         color: #000;
+         top: 0;
+         position: absolute;
+         visibility: hidden;
+         background: none;
+      }
+
+      .my-tooltip-success {
+         color: green;
+      }
+
+      .my-tooltip-danger {
+         color: red;
+      }
+   }
+}
+
+@media (max-width: 800px) {
+   .todo {
+      flex-direction: column;
+      justify-content: space-between;
+
+      .title {
+         width: 90%;
+         margin: auto;
+      }
+
+      .todo-options {
+         width: 90%;
+         margin: auto;
+         justify-content: flex-start;
+
+         .opt {
+            margin: 0;
+            margin-left: 1em;
+            padding: 1em 0.5em;
+         }
+
+         .my-tooltip {
+            top: 50%;
+         }
+      }
+   }
+}
+
+@media (max-width: 400px) {
+   .todo {
+      .todo-options .opt {
+         width: 90%;
+         margin: 0;
+         padding: 0 0.5em;
+      }
+   }
+}
